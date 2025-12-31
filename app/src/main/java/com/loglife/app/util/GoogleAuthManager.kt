@@ -26,6 +26,7 @@ class GoogleAuthManager(private val context: Context) {
     private val googleSignInOptions: GoogleSignInOptions by lazy {
         GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
+            .requestServerAuthCode("401844581698-7cdsqunp7ebuiu8kbir5ko7jq63mraa0.apps.googleusercontent.com")
             .requestScopes(
                 Scope(DriveScopes.DRIVE_READONLY),
                 Scope(DocsScopes.DOCUMENTS)

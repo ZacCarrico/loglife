@@ -2,16 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Permissions -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Permissions for MVP -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".LogLifeApp"
@@ -50,45 +43,21 @@
             android:parentActivityName=".ui.SettingsActivity"
             android:theme="@style/Theme.LogLife" />
 
-        <!-- Accessibility Service for Volume Button Detection -->
-        <service
-            android:name=".service.VolumeButtonAccessibilityService"
-            android:exported="true"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
-            <intent-filter>
-                <action android:name="android.accessibilityservice.AccessibilityService" />
-            </intent-filter>
-            <meta-data
-                android:name="android.accessibilityservice"
-                android:resource="@xml/accessibility_service_config" />
-        </service>
-
-        <!-- Recording Service -->
-        <service
-            android:name=".service.RecordingService"
+        <!-- Queue Activity (MVP: not used, keeping for future) -->
+        <!--
+        <activity
+            android:name=".ui.QueueActivity"
             android:exported="false"
-            android:foregroundServiceType="microphone" />
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/Theme.LogLife" />
+        -->
 
-        <!-- Sync Worker -->
-        <provider
-            android:name="androidx.startup.InitializationProvider"
-            android:authorities="${applicationId}.androidx-startup"
-            android:exported="false"
-            tools:node="merge">
-            <meta-data
-                android:name="androidx.work.WorkManagerInitializer"
-                android:value="androidx.startup"
-                tools:node="remove" />
-        </provider>
-
-        <!-- Boot Receiver to restart service -->
-        <receiver
-            android:name=".service.BootReceiver"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
+        <!-- MVP: Removed services and receivers (will add back in future versions)
+             - VolumeButtonAccessibilityService
+             - RecordingService
+             - WorkManagerInitializer
+             - BootReceiver
+        -->
 
     </application>
 
