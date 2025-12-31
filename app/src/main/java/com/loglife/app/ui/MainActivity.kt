@@ -3,6 +3,7 @@ package com.loglife.app.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -73,6 +74,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupUI() {
+        // Log entry EditText - ensure keyboard appears on tap
+        binding.editTextLog.setOnClickListener {
+            it.requestFocus()
+            val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.showSoftInput(it, InputMethodManager.SHOW_IMPLICIT)
+        }
+
         // Log button
         binding.buttonLog.setOnClickListener {
             handleLogClick()
