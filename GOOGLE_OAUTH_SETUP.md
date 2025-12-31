@@ -35,37 +35,47 @@ C1:6C:1E:82:53:17:B0:C9:0A:93:C2:EB:5A:7E:79:C0:78:EC:DC:AF
    - **User support email**: Your email
    - **Developer contact email**: Your email
 5. Click **"Save and Continue"**
-6. **Scopes**: Click **"Add or Remove Scopes"**
+6. **Scopes** (REQUIRED): Click **"Add or Remove Scopes"**
    - Search and add: `https://www.googleapis.com/auth/drive.readonly`
    - Search and add: `https://www.googleapis.com/auth/documents`
    - Click **"Update"** → **"Save and Continue"**
-7. **Test users**: Click **"Add Users"**
-   - Add your Google email address (the one you'll use to test)
+7. **Test users** (CRITICAL): Click **"Add Users"**
+   - **Add your Google email address** (the one you'll use to test the app)
    - Click **"Add"** → **"Save and Continue"**
+   - ⚠️ **Without this, you'll get "Access blocked" errors!**
 8. Review and click **"Back to Dashboard"**
+9. **Verify Publishing Status**: Should show **"Testing"** (not "In production")
 
-### 4. Create OAuth 2.0 Credentials
+### 4. Create Web OAuth Client ID (REQUIRED)
+**Why needed:** Android apps need a Web OAuth client to obtain server auth codes for accessing Google APIs on behalf of users.
+
 1. Go to **"APIs & Services"** → **"Credentials"**
 2. Click **"Create Credentials"** → **"OAuth client ID"**
-3. Select **"Android"** as application type
+3. Select **"Web application"**
 4. Fill in:
-   - **Name**: `LogLife Android App`
+   - **Name**: `LogLife Web`
+   - **Authorized redirect URIs**: Leave empty (not needed for Android flow)
+5. Click **"Create"**
+6. **Copy the Client ID** (format: `XXXXXX.apps.googleusercontent.com`)
+   - Example: `401844581698-7cdsqunp7ebuiu8kbir5ko7jq63mraa0.apps.googleusercontent.com`
+7. Click **"OK"**
+
+**Note:** This Web client ID is already configured in the app code at `GoogleAuthManager.kt:29`. The app uses it to request server auth codes via `requestServerAuthCode()`.
+
+### 5. Create Android OAuth Client (REQUIRED)
+**Why needed:** Identifies your app via package name + SHA-1 fingerprint for the sign-in flow.
+
+1. In **"Credentials"**, click **"Create Credentials"** → **"OAuth client ID"**
+2. Select **"Android"** as application type
+3. Fill in:
+   - **Name**: `LogLife Android`
    - **Package name**: `com.loglife.app`
    - **SHA-1 certificate fingerprint**: Paste this:
      ```
      C1:6C:1E:82:53:17:B0:C9:0A:93:C2:EB:5A:7E:79:C0:78:EC:DC:AF
      ```
-5. Click **"Create"**
-6. **IMPORTANT**: You don't need to download anything - Android apps use the package name + SHA-1 for auth
-
-### 5. (Optional) Create Web Client ID for Testing
-*Only if you want to test in an emulator or need additional features*
-
-1. In **"Credentials"**, click **"Create Credentials"** → **"OAuth client ID"**
-2. Select **"Web application"**
-3. Name it: `LogLife Web Client (for Android)`
 4. Click **"Create"**
-5. **Copy the Client ID** - you'll need it if the Android credentials don't work
+5. **No download needed** - Android apps use the package name + SHA-1 for authentication
 
 ---
 
