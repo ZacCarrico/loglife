@@ -81,6 +81,17 @@ class MainActivity : AppCompatActivity() {
             imm.showSoftInput(it, InputMethodManager.SHOW_IMPLICIT)
         }
 
+        // Enable scrolling inside EditText (nested scrolling fix)
+        binding.editTextLog.setOnTouchListener { v, event ->
+            v.parent.requestDisallowInterceptTouchEvent(true)
+            when (event.action and android.view.MotionEvent.ACTION_MASK) {
+                android.view.MotionEvent.ACTION_UP -> {
+                    v.parent.requestDisallowInterceptTouchEvent(false)
+                }
+            }
+            false
+        }
+
         // Log button
         binding.buttonLog.setOnClickListener {
             handleLogClick()

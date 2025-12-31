@@ -27,12 +27,12 @@
 
         <TextView
             android:id="@+id/textTranscription"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:textSize="14sp"
-            android:maxLines="3"
-            android:ellipsize="end"
+            android:maxHeight="120dp"
+            android:scrollbars="vertical"
             tools:text="This is a sample transcription of what was recorded." />
 
         <TextView

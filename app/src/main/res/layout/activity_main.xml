@@ -114,6 +114,8 @@
                     android:inputType="textMultiLine|textCapSentences"
                     android:background="@android:color/transparent"
                     android:scrollbars="vertical"
+                    android:scrollHorizontally="false"
+                    android:overScrollMode="always"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:clickable="true" />
