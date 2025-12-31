@@ -2,18 +2,26 @@ package com.loglife.app.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.loglife.app.R
 import com.loglife.app.databinding.ActivityDrivePickerBinding
+import com.loglife.app.databinding.ItemDocumentBinding
 import com.loglife.app.util.GoogleDocInfo
 import com.loglife.app.util.GoogleDocsManager
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DrivePickerActivity : AppCompatActivity() {
     
@@ -115,15 +123,6 @@ class DrivePickerActivity : AppCompatActivity() {
 }
 
 // Adapter for the document list
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
-import com.loglife.app.databinding.ItemDocumentBinding
-import java.text.SimpleDateFormat
-import java.util.*
-
 class DocListAdapter(
     private val onDocSelected: (GoogleDocInfo) -> Unit
 ) : ListAdapter<GoogleDocInfo, DocListAdapter.DocViewHolder>(DocDiffCallback()) {
