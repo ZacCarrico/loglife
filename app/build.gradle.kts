@@ -69,7 +69,7 @@ dependencies {
     
     // Google APIs for Drive and Docs
     implementation("com.google.android.gms:play-services-auth:20.7.0")
-    implementation("com.google.api-client:google-api-client-android:2.2.0")
+    implementation("com.google.api-client:google-api-client-android:1.33.9")
     implementation("com.google.apis:google-api-services-drive:v3-rev20231128-2.0.0")
     // NOTE: v1-rev20231115-2.0.0 does not exist, using latest working version
     implementation("com.google.apis:google-api-services-docs:v1-rev20220609-1.32.1")
