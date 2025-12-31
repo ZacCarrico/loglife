@@ -154,7 +154,7 @@ class MainActivity : AppCompatActivity() {
                 // Create timestamped entry
                 val timestamp = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
                     .format(Date())
-                val logEntry = "[$timestamp]\n$text\n\n"
+                val logEntry = "[$timestamp]\n$text\n"
 
                 // Prepend to Google Doc
                 val result = docsManager.prependToDocument(documentId, logEntry)
