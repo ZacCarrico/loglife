@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LogLife</string>
+    
+    <!-- Accessibility Service -->
+    <string name="accessibility_service_description">LogLife uses this accessibility service to detect when you hold the volume down button. When held, it records your voice, transcribes it using on-device AI, and adds it to your selected Google Doc with a timestamp.</string>
+    
+    <!-- Main Activity -->
+    <string name="welcome_title">LogLife</string>
+    <string name="welcome_subtitle">Voice notes to Google Docs</string>
+    <string name="status_ready">Ready - Hold Volume Down to Record</string>
+    <string name="status_recording">Recording…</string>
+    <string name="status_transcribing">Transcribing…</string>
+    <string name="status_syncing">Syncing to Google Docs…</string>
+    <string name="status_done">Done!</string>
+    <string name="status_error">Error: %s</string>
+    <string name="status_offline">Offline - Will sync when connected</string>
+    <string name="status_no_doc">No document selected</string>
+    <string name="status_accessibility_disabled">Accessibility service not enabled</string>
+    
+    <!-- Setup Steps -->
+    <string name="setup_title">Setup Required</string>
+    <string name="setup_step1">1. Sign in with Google</string>
+    <string name="setup_step2">2. Select a Google Doc</string>
+    <string name="setup_step3">3. Enable Accessibility Service</string>
+    <string name="setup_step4">4. Download Whisper Model</string>
+    
+    <!-- Buttons -->
+    <string name="btn_sign_in">Sign in with Google</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="btn_select_doc">Select Document</string>
+    <string name="btn_change_doc">Change Document</string>
+    <string name="btn_enable_accessibility">Enable Accessibility</string>
+    <string name="btn_download_model">Download Model</string>
+    <string name="btn_settings">Settings</string>
+    <string name="btn_view_queue">View Pending (%d)</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_account">Account</string>
+    <string name="settings_document">Target Document</string>
+    <string name="settings_model">Whisper Model</string>
+    <string name="settings_model_tiny">Tiny (~75MB, fastest)</string>
+    <string name="settings_model_base">Base (~150MB, balanced)</string>
+    <string name="settings_model_small">Small (~500MB, best accuracy)</string>
+    <string name="settings_accessibility">Accessibility Service</string>
+    <string name="settings_pending_sync">Pending Sync Items</string>
+    <string name="settings_about">About</string>
+    
+    <!-- Drive Picker -->
+    <string name="picker_title">Select a Google Doc</string>
+    <string name="picker_loading">Loading…</string>
+    <string name="picker_empty">No Google Docs found</string>
+    <string name="picker_error">Error loading documents</string>
+    <string name="picker_search_hint">Search documents…</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_recording">Recording</string>
+    <string name="notification_channel_sync">Sync Status</string>
+    <string name="notification_recording_title">Recording…</string>
+    <string name="notification_recording_text">Release volume button to stop</string>
+    <string name="notification_transcribing">Transcribing audio…</string>
+    <string name="notification_synced">Note added to document</string>
+    <string name="notification_queued">Note saved offline, will sync later</string>
+    <string name="notification_sync_failed">Sync failed: %s</string>
+    
+    <!-- Dialogs -->
+    <string name="dialog_sign_out_title">Sign Out?</string>
+    <string name="dialog_sign_out_message">You\'ll need to sign in again to sync notes.</string>
+    <string name="dialog_delete_queue_title">Clear Pending Notes?</string>
+    <string name="dialog_delete_queue_message">This will delete %d unsent notes. This cannot be undone.</string>
+    <string name="dialog_model_download_title">Download Whisper Model</string>
+    <string name="dialog_model_download_message">This will download the %s model (%s). Continue?</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_confirm">Confirm</string>
+    <string name="dialog_delete">Delete</string>
+    <string name="dialog_download">Download</string>
+    
+    <!-- Errors -->
+    <string name="error_no_permission">Microphone permission required</string>
+    <string name="error_google_sign_in">Google sign-in failed</string>
+    <string name="error_no_document">Please select a document first</string>
+    <string name="error_recording_failed">Recording failed</string>
+    <string name="error_transcription_failed">Transcription failed</string>
+    <string name="error_sync_failed">Sync failed</string>
+    <string name="error_model_not_loaded">Whisper model not loaded</string>
+    
+    <!-- Queue -->
+    <string name="queue_title">Pending Notes</string>
+    <string name="queue_empty">All notes synced!</string>
+    <string name="queue_item_format">%1$s\n%2$s</string>
+    <string name="queue_sync_now">Sync Now</string>
+    <string name="queue_clear_all">Clear All</string>
+</resources>
