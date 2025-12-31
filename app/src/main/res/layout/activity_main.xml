@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:textSize="12sp"
-                android:textColor="?android:attr/textColorSecondary"
+                android:textColor="@color/on_background"
                 tools:text="Signed in as user@gmail.com" />
 
             <!-- Document Info Card -->
@@ -61,7 +61,7 @@
                         android:layout_height="wrap_content"
                         android:text="Logging to:"
                         android:textSize="12sp"
-                        android:textColor="?android:attr/textColorSecondary"
+                        android:textColor="@color/on_background"
                         android:layout_marginBottom="4dp" />
 
                     <TextView
@@ -69,6 +69,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
+                        android:textColor="@color/on_background"
                         android:textStyle="bold"
                         android:layout_marginBottom="8dp"
                         tools:text="My Life Log" />
@@ -109,6 +110,7 @@
                     android:padding="16dp"
                     android:gravity="top|start"
                     android:hint="Type your log entry here..."
+                    android:textColor="@color/on_background"
                     android:inputType="textMultiLine|textCapSentences"
                     android:background="@android:color/transparent"
                     android:scrollbars="vertical"

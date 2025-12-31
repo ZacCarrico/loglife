@@ -104,6 +104,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:textSize="16sp"
+                        android:textColor="@color/on_background"
                         android:ellipsize="end"
                         android:maxLines="2"
                         tools:text="My Voice Notes" />
