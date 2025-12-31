@@ -48,18 +48,21 @@ Before the app can access Google Drive and Docs, you need to create OAuth creden
 9. Enter the SHA-1 fingerprint
 10. Click **Create**
 
-### 2. Configure OAuth Consent Screen
+### 2. Configure Google Auth Platform
 
-1. Go to **APIs & Services > OAuth consent screen**
-2. Choose **External** (or Internal if you have a Workspace account)
-3. Fill in the required fields:
-   - App name: LogLife
-   - User support email: your email
-   - Developer contact: your email
-4. Add scopes:
-   - `https://www.googleapis.com/auth/drive.readonly`
-   - `https://www.googleapis.com/auth/documents`
-5. Add test users (your Google account) if in testing mode
+1. Go to **Google Auth Platform** in the sidebar
+2. Navigate to **Branding**:
+   - Choose **External** (or Internal if you have a Workspace account)
+   - Fill in the required fields:
+     - App name: LogLife
+     - User support email: your email
+     - Developer contact: your email
+3. Navigate to **Data Access**:
+   - Add scopes:
+     - `https://www.googleapis.com/auth/drive.readonly`
+     - `https://www.googleapis.com/auth/documents`
+4. Navigate to **Audience**:
+   - Add test users (your Google account) if in testing mode
 
 ### 3. Build the App
 

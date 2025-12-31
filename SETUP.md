@@ -33,30 +33,31 @@ cd loglife
    - **Google Drive API** - Click → **Enable**
    - **Google Docs API** - Click → **Enable**
 
-### 2.3 Configure OAuth Consent Screen
+### 2.3 Configure Google Auth Platform
 
-1. Go to **APIs & Services** → **OAuth consent screen**
-2. Select **External** → **Create**
-3. Fill in the required fields:
-   - **App name**: `LogLife`
-   - **User support email**: Your email
-   - **Developer contact email**: Your email
-4. Click **Save and Continue**
-5. On the **Scopes** page:
+1. Go to **Google Auth Platform** in the sidebar
+2. Navigate to **Branding**:
+   - Select **External** → **Create**
+   - Fill in the required fields:
+     - **App name**: `LogLife`
+     - **User support email**: Your email
+     - **Developer contact email**: Your email
+   - Click **Save and Continue**
+3. Navigate to **Data Access**:
    - Click **Add or Remove Scopes**
    - Add these scopes:
      - `https://www.googleapis.com/auth/drive.readonly`
      - `https://www.googleapis.com/auth/documents`
    - Click **Update** → **Save and Continue**
-6. On the **Test users** page:
+4. Navigate to **Audience**:
    - Click **Add Users**
    - Add your Google account email
    - Click **Save and Continue**
-7. Review and click **Back to Dashboard**
+5. Review and click **Back to Dashboard**
 
 ### 2.4 Create OAuth Credentials
 
-1. Go to **APIs & Services** → **Credentials**
+1. Go to **Google Auth Platform** → **Clients** in the sidebar
 2. Click **Create Credentials** → **OAuth client ID**
 3. Select **Android** as the application type
 4. Fill in:
