@@ -73,8 +73,8 @@ class GoogleDocsManager(private val context: Context) {
             val docsService = authManager.getDocsService()
                 ?: return@withContext Result.failure(Exception("Not signed in"))
             
-            // Format: text + newline + newline (to separate from existing content)
-            val formattedText = "$text\n\n"
+            // Use text as-is, already formatted by caller
+            val formattedText = text
             
             // Insert at index 1 (beginning of document body, after the implicit start)
             val request = Request().apply {
