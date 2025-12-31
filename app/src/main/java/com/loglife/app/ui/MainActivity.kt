@@ -46,6 +46,15 @@ class MainActivity : AppCompatActivity() {
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == RESULT_OK) {
+            val docId = result.data?.getStringExtra(DrivePickerActivity.EXTRA_DOC_ID)
+            val docName = result.data?.getStringExtra(DrivePickerActivity.EXTRA_DOC_NAME)
+
+            if (docId != null && docName != null) {
+                prefsManager.selectedDocId = docId
+                prefsManager.selectedDocName = docName
+                Toast.makeText(this, "Document changed to: $docName", Toast.LENGTH_SHORT).show()
+            }
+
             updateUI()
         }
     }
