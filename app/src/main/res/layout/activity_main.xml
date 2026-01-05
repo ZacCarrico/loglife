@@ -85,6 +85,25 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Log Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Log to Google Doc"
+                android:textSize="16sp"
+                android:padding="16dp" />
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
             <!-- Log Entry Text Box -->
             <TextView
                 android:layout_width="wrap_content"
@@ -121,25 +140,6 @@
                     android:clickable="true" />
 
             </com.google.android.material.card.MaterialCardView>
-
-            <!-- Progress Bar -->
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:visibility="gone"
-                tools:visibility="visible" />
-
-            <!-- Log Button -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonLog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Log to Google Doc"
-                android:textSize="16sp"
-                android:padding="16dp" />
 
             <!-- Settings Button -->
             <com.google.android.material.button.MaterialButton
