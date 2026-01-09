@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material Design 3 Dark Mode Colors -->
+    <!-- Using smoky grays to reduce eye strain and pixel bleed -->
+    <color name="primary">#BB86FC</color>
+    <color name="primary_dark">#3700B3</color>
+    <color name="primary_variant">#3700B3</color>
+    <color name="secondary">#03DAC6</color>
+    <color name="secondary_variant">#03DAC6</color>
+    <color name="background">#121212</color>
+    <color name="surface">#1E1E1E</color>
+    <color name="error">#CF6679</color>
+    <color name="on_primary">#000000</color>
+    <color name="on_secondary">#000000</color>
+    <color name="on_background">#E1E1E1</color>
+    <color name="on_surface">#E1E1E1</color>
+    <color name="on_error">#000000</color>
+
+    <color name="recording_red">#EF5350</color>
+    <color name="success_green">#66BB6A</color>
+    <color name="warning_orange">#FFA726</color>
+    <color name="status_grey">#B0B0B0</color>
+</resources>

@@ -65,6 +65,11 @@ class PreferencesManager(context: Context) {
     var accessibilityReminderDismissed: Boolean
         get() = regularPrefs.getBoolean(KEY_ACCESSIBILITY_DISMISSED, false)
         set(value) = regularPrefs.edit().putBoolean(KEY_ACCESSIBILITY_DISMISSED, value).apply()
+
+    // Theme preference (dark mode is default)
+    var themeMode: ThemeMode
+        get() = ThemeMode.fromString(regularPrefs.getString(KEY_THEME_MODE, ThemeMode.DARK.name))
+        set(value) = regularPrefs.edit().putString(KEY_THEME_MODE, value.name).apply()
     
     fun clearAll() {
         securePrefs.edit().clear().apply()
@@ -79,6 +84,7 @@ class PreferencesManager(context: Context) {
         private const val KEY_MODEL_DOWNLOADED = "model_downloaded"
         private const val KEY_FIRST_LAUNCH = "first_launch"
         private const val KEY_ACCESSIBILITY_DISMISSED = "accessibility_dismissed"
+        private const val KEY_THEME_MODE = "theme_mode"
         
         @Volatile
         private var INSTANCE: PreferencesManager? = null
@@ -97,10 +103,22 @@ enum class WhisperModel(val displayName: String, val fileName: String, val sizeB
     TINY("Tiny (~75MB)", "ggml-tiny.bin", 75_000_000L),
     BASE("Base (~150MB)", "ggml-base.bin", 150_000_000L),
     SMALL("Small (~500MB)", "ggml-small.bin", 500_000_000L);
-    
+
     companion object {
         fun fromString(name: String?): WhisperModel {
             return values().find { it.name == name } ?: BASE
+        }
+    }
+}
+
+enum class ThemeMode(val displayName: String) {
+    LIGHT("Light"),
+    DARK("Dark"),
+    SYSTEM("System Default");
+
+    companion object {
+        fun fromString(name: String?): ThemeMode {
+            return values().find { it.name == name } ?: DARK
         }
     }
 }
